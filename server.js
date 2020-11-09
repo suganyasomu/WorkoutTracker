@@ -2,7 +2,8 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.PORT || 3005;
 
 // const User = require("./userModel.js");
 const app = express();
@@ -14,22 +15,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-app.get("/exercise?",(req,res)=>{
+const htmlRoutes = require("./routes/htmlroutes");
+const apiRoutes = require("./routes/apiroutes");
+app.use(htmlRoutes);
+app.use(apiRoutes);
 
-})
 
-app.get("/api/workouts",(req,res)=>{
 
-})
-
-app.put("/api/workouts/:id",(req,res)=>{
-
-});
-app.post("api/workouts",(req,res)=>{
-
-});
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
