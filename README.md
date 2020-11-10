@@ -44,5 +44,6 @@ SOFTWARE.
 =======
 
 ## Deployed Links:
-Github:  
-heroku link
+Github:  https://github.com/suganyasomu/WorkoutTracker
+
+heroku link: https://whispering-temple-13548.herokuapp.com/

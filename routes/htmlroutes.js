@@ -3,7 +3,7 @@ var express = require("express");
 
 var router = express.Router();
 
-router.get("/exercise", (req, res) => {
+router.get("/exercise?", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
